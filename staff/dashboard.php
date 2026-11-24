@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["staff_id"])) {
+    header("Location: login.php");
+    exit;
+}
 include "../includes/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,6 +39,7 @@ $waiting = $conn->query("SELECT id, queue_number, name, reason FROM queue_entrie
 </head>
 <body>
   <h1>Staff Dashboard</h1>
+  <p><a href="logout.php">Log out</a></p>
 
   <h2>Now serving</h2>
   <?php if ($serving) { ?>
