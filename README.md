@@ -11,4 +11,3 @@ Problem: Patients at the campus clinic wait for hours without knowing their turn
 
 ## Team
 - Isaac Peprah (Daster34)
-  - Your Name (github-username)
