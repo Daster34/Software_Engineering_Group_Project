@@ -12,3 +12,4 @@ Problem: Patients at the campus clinic wait for hours without knowing their turn
 ## Team
 - Isaac Peprah (Daster34)
 - Emmanuel Aidoo (kofimma371)
+- Freeman Collins Osei Yaw (freemancollins446-prog)
