@@ -1,6 +1,5 @@
 <?php
 include "includes/db.php";
-$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
@@ -14,15 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("isss", $next, $name, $phone, $reason);
     $stmt->execute();
 
-    $message = "You are number " . $next . " in the queue.";
+    header("Location: ticket.php?id=" . $conn->insert_id);
+    exit;
 }
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Clinic Check-in</title></head>
+<head>
+  <title>Clinic Check-in</title>
+</head>
 <body>
   <h1>Clinic Check-in</h1>
-  <p><?php echo $message; ?></p>
   <form method="post">
     <input type="text" name="name" placeholder="Full name" required><br>
     <input type="text" name="phone" placeholder="Phone number" required><br>
